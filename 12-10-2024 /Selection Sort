@@ -1,0 +1,44 @@
+// Selection Sort
+
+#include<iostream>
+#include<climits>
+using namespace std;
+
+void SelectionSort(int arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        int min = i; // Initialize the index of the minimum element
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] < arr[min]) {
+                min = j; // Update min to the index of the smaller element
+            }
+        }
+        // Swap the found minimum element with the element at index i
+        if (min != i) {
+            swap(arr[i], arr[min]);
+        }
+    }
+}
+
+
+
+void printArray(int arr[], int n)
+{
+    // Iterate and print every element
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+}
+
+// Driver Code
+int main()
+{
+      // Sample Input
+    int arr[] = { 0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1 };
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    SelectionSort(arr, n);
+
+    printArray(arr, n);
+
+    return 0;
+} 
+ 
