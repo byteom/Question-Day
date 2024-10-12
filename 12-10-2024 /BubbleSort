@@ -1,0 +1,39 @@
+// Bubble Sort
+
+#include<iostream>
+using namespace std;
+
+void BubbleSort(int arr[],int n){
+    for(int i=0;i<n;i++){  // how many time
+    for(int j=0; j<n-i-1; j++) {
+
+        if(arr[j]>arr[j+1]){
+            swap(arr[j],arr[j+1]);
+        }
+    }
+    }
+}
+ 
+
+
+void printArray(int arr[], int n)
+{
+    // Iterate and print every element
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+}
+
+// Driver Code
+int main()
+{
+      // Sample Input
+    int arr[] = { 0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1 };
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    BubbleSort(arr, n);
+
+    printArray(arr, n);
+
+    return 0;
+} 
+ 
